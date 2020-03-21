@@ -13,11 +13,11 @@ Poutyne-callbacks  is compatible with  the __latest version of PyTorch__ ,  __Py
 
 ### Cite
 ```
-@misc{poutyne,
-    author = {Paradis, Fr{\'e}d{\'e}rik},
-    title  = {{Poutyne: A Keras-like framework for PyTorch}},
-    year   = {2018},
-    note   = {\url{https://poutyne.org}}
+@misc{poutyne-callbacks,
+    author = {Beauchemin, David},
+    title  = {{Poutyne-callbacks: A callbacks utilities for Poutyne}},
+    year   = {2020},
+    note   = {...}
 }
 ```
 
