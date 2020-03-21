@@ -1,5 +1,5 @@
 [![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](http://www.gnu.org/licenses/lgpl-3.0)
-[![Build Status](https://travis-ci.org/GRAAL-Research/poutyne.svg?branch=master)](https://travis-ci.org/GRAAL-Research/poutyne)
+[![Build Status](https://travis-ci.org/GRAAL-Research/poutyne-callbacks.svg?branch=master)](https://travis-ci.org/GRAAL-Research/poutyne-callbacks)
 
 ## Here is Poutyne-callbacks.
 
@@ -17,7 +17,7 @@ Poutyne-callbacks  is compatible with  the __latest version of PyTorch__ ,  __Py
     author = {Beauchemin, David},
     title  = {{Poutyne-callbacks: A callbacks utilities for Poutyne}},
     year   = {2020},
-    note   = {...}
+    note   = {\url{https://graal-research.github.io/poutyne-callbacks/}}
 }
 ```
 
