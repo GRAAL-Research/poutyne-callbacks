@@ -1,15 +1,14 @@
-.. Poutyne documentation master file, created by
+.. Poutyne-callbacks documentation master file, created by
    sphinx-quickstart on Sat Feb 17 12:19:43 2018.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-:github_url: https://github.com/GRAAL-Research/poutyne
+:github_url: https://github.com/GRAAL-Research/poutyne-callbacks
 
 .. meta::
   :description: Poutyne is a Keras-like framework for PyTorch and handles much of the boilerplating code needed to train neural networks.
   :keywords: poutyne, poutine, deep learning, pytorch, neural network, keras, machine learning, data science, python
-  :author: Frédérik Paradis
-  :property="og:image": https://poutyne.org/_static/logos/poutyne-notext.png
+  :author: David Beauchemin
 
 Here is Poutyne
 ===============

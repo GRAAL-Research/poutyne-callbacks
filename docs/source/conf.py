@@ -8,13 +8,14 @@
 
 # -- Path setup --------------------------------------------------------------
 
+import datetime
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 import os
 import sys
-import datetime
+
 sys.path.insert(0, os.path.abspath('../..'))
 
 from poutyne import __version__ as version
@@ -23,9 +24,9 @@ year = str(datetime.datetime.now().year)
 
 # -- Project information -----------------------------------------------------
 
-project = 'Poutyne'
-copyright = '2018-' + year + ', Frédérik Paradis'
-author = 'Frédérik Paradis'
+project = 'Poutyne-Callbacks'
+copyright = '2020-' + year + ', David Beauchemin'
+author = 'David Beauchemin'
 
 # The short X.Y version
 version = version
@@ -106,12 +107,12 @@ html_extra_path = ['CNAME', 'favicon.ico']
 #
 # html_sidebars = {}
 
-html_logo = '_static/logos/poutyne-callbacks-light.png'
+### html_logo = '_static/logos/poutyne-callbacks-light.png'
 
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'Poutynedoc'
+htmlhelp_basename = 'PoutyneCallbacksdoc'
 
 # -- Options for LaTeX output ------------------------------------------------
 
@@ -137,14 +138,14 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'Poutyne.tex', 'Poutyne Documentation', 'Frédérik Paradis', 'manual'),
+    (master_doc, 'Poutyne-Callbakcs.tex', 'Poutyne-callbacks Documentation', 'David Beauchemin', 'manual'),
 ]
 
 # -- Options for manual page output ------------------------------------------
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages = [(master_doc, 'poutyne-callbacks', 'Poutyne Documentation', [author], 1)]
+man_pages = [(master_doc, 'poutyne-callbacks', 'Poutyne-callbacks Documentation', [author], 1)]
 
 # -- Options for Texinfo output ----------------------------------------------
 
@@ -152,8 +153,8 @@ man_pages = [(master_doc, 'poutyne-callbacks', 'Poutyne Documentation', [author]
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'Poutyne', 'Poutyne Documentation', author, 'Poutyne', 'One line description of project.',
-     'Miscellaneous'),
+    (master_doc, 'Poutyne-callbacks', 'Poutyne-callbacks Documentation', author, 'Poutyne-callbacks',
+     'One line description of project.', 'Miscellaneous'),
 ]
 
 # -- Intersphinx mappings ----------------------------------------------------
@@ -162,7 +163,8 @@ intersphinx_mapping = {
     'PyTorch': ('https://pytorch.org/docs/master/', None),
     'python': ('https://docs.python.org/3', None),
     'numpy': ('http://docs.scipy.org/doc/numpy/', None),
-    'matplotlib': ('https://matplotlib.org/', None)
+    'matplotlib': ('https://matplotlib.org/', None),
+    'Poutyne': ('https://poutyne.org/', None)
 }
 
 # -- Extension configuration -------------------------------------------------
