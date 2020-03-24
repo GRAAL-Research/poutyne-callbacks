@@ -5,8 +5,7 @@ from typing import Dict, Union
 from mlflow import pytorch, set_tracking_uri, start_run, log_params, log_metric, log_param, end_run, active_run, \
     create_experiment, get_experiment_by_name
 from mlflow.exceptions import MlflowException
-from omegaconf.dictconfig import DictConfig
-from omegaconf.listconfig import ListConfig
+from omegaconf import DictConfig, ListConfig
 from poutyne.framework import Logger
 
 warnings.filterwarnings('ignore')
@@ -21,6 +20,7 @@ class MlFlowWriter(Logger):
                  tracking_path: str = 'mlruns',
                  batch_granularity: bool = False,
                  same_run_logging: bool = True) -> None:
+        # pylint: disable=too-many-arguments
         super().__init__(batch_granularity=batch_granularity)
         self.same_run_logging = same_run_logging
 
@@ -42,7 +42,7 @@ class MlFlowWriter(Logger):
     def _log_config_write(self, parent_name: str, element: Union[Dict, ListConfig]) -> None:
         if isinstance(element, DictConfig):
             for key, value in element.items():
-                if isinstance(value, DictConfig) or isinstance(value, ListConfig):
+                if isinstance(value, (DictConfig, ListConfig)):
                     self._log_config_write('{}.{}'.format(parent_name, key), value)
                 else:
                     log_param('{}.{}'.format(parent_name, key), value)
@@ -83,7 +83,7 @@ class MlFlowWriter(Logger):
         for key, value in logs.items():
             log_metric('test-{}'.format(key), value)
 
-    def log_model(self):  # todo management of device cpu and gpu go back
+    def log_model(self):  # management of device cpu and gpu go back
         # device = self.model.device
         with active_run():
             pytorch.log_model(self.model.network, 'trained-model')
