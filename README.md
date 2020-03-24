@@ -7,7 +7,7 @@
 Instead of always rewriting logic in our training loop, Poutyne is using many logging callback to handle some of the unfriendly coding step to train a neural networks. But, one can need other kind of callback, suck a handler for MLFlow logging or pushing update notification to yourself or a team. 
 This package include usefull callback for Poutyne.
 
-Read the documentation at XX.
+Read the documentation [here](https://graal-research.github.io/poutyne-callbacks/).
 
 Poutyne-callbacks  is compatible with  the __latest version of PyTorch__ ,  __Python >= 3.5__ and __Poutyne__.
 
