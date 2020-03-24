@@ -9,9 +9,9 @@ install:
   - pip install -q yapf==0.27
   - pip install -q pylint==2.3.1
 script:
-  - yapf --diff --recursive poutyne-callbacks/
+  - yapf --diff --recursive ptcallbacks/
   - yapf --diff --recursive tests/
-  - pylint poutyne-callbacks/
+  - pylint ptcallbacks/
   - pylint tests/
   - pytest
   - cd docs

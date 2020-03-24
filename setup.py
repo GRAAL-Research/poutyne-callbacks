@@ -8,7 +8,7 @@ readme_file_path = os.path.join(current_file_path, 'README.md')
 with open(readme_file_path, 'r', encoding='utf-8') as f:
     readme = f.read()
 
-version_file_path = os.path.join(current_file_path, 'poutyne-callbacks/version.py')
+version_file_path = os.path.join(current_file_path, 'ptcallbacks/version.py')
 with open(version_file_path, 'rb') as f:
     # pylint: disable=exec-used,undefined-variable
     exec(compile(f.read(), version_file_path, 'exec'), globals(), locals())

@@ -107,7 +107,7 @@ html_extra_path = ['CNAME', 'favicon.ico']
 #
 # html_sidebars = {}
 
-### html_logo = '_static/logos/poutyne-callbacks-light.png'
+### html_logo = '_static/logos/ptcallbacks-light.png'
 
 # -- Options for HTMLHelp output ---------------------------------------------
 
@@ -145,7 +145,7 @@ latex_documents = [
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages = [(master_doc, 'poutyne-callbacks', 'Poutyne-callbacks Documentation', [author], 1)]
+man_pages = [(master_doc, 'ptcallbacks', 'Poutyne-callbacks Documentation', [author], 1)]
 
 # -- Options for Texinfo output ----------------------------------------------
 
