@@ -1,5 +1,3 @@
-import os
-import warnings
 from typing import Dict, Union
 
 from mlflow import pytorch, set_tracking_uri, start_run, log_params, log_metric, log_param, end_run, active_run, \
@@ -8,29 +6,21 @@ from mlflow.exceptions import MlflowException
 from omegaconf import DictConfig, ListConfig
 from poutyne.framework import Logger
 
-warnings.filterwarnings('ignore')
-
 
 # https://github.com/ymym3412/Hydra-MLflow-experiment-management/blob/c0bef5b5117970dd2a465b97504a5478b3eff704/mlflow_writer.py
 class MlFlowWriter(Logger):
     def __init__(self,
                  experiment_name: str,
-                 config_params: Union[Dict, DictConfig, ListConfig],
-                 root_path=Union[str, None],
-                 tracking_path: str = 'mlruns',
+                 tracking_path: str,
                  batch_granularity: bool = False,
                  same_run_logging: bool = True) -> None:
         # pylint: disable=too-many-arguments
         super().__init__(batch_granularity=batch_granularity)
+        set_tracking_uri(tracking_path)
+
         self.same_run_logging = same_run_logging
-
-        relative_path = os.path.join(root_path, tracking_path) if root_path is not None else tracking_path
-        set_tracking_uri('file:{}'.format(relative_path))
-
         self._handle_experiment_id(experiment_name)
         self.run_id = start_run(experiment_id=self.experiment_id).info.run_id
-
-        self.log_config_params(config_params)
 
     def log_config_params(self, params: Union[Dict, DictConfig, ListConfig]) -> None:
         if isinstance(params, Dict):
@@ -64,7 +54,7 @@ class MlFlowWriter(Logger):
         self._on_train_end_write(logs)
         end_run()
 
-    def _on_train_end_write(self, logs) -> None:
+    def _on_train_end_write(self, logs: Dict) -> None:
         last_epoch = self.params['epochs']
         log_metric('last-epoch', last_epoch)
         self.log_model()
@@ -89,7 +79,7 @@ class MlFlowWriter(Logger):
             pytorch.log_model(self.model.network, 'trained-model')
         # self.model.to(device)
 
-    def _handle_experiment_id(self, experiment_name):
+    def _handle_experiment_id(self, experiment_name: str) -> None:
         try:
             self.experiment_id = create_experiment(experiment_name)
         except MlflowException:
